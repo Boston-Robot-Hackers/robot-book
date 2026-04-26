@@ -157,7 +157,7 @@ An action is defined with three message types:
 Together, nodes, topics, services, and actions form the **computation graph** — the full picture of what is running and how it is connected. The `rqt_graph` tool visualizes it:
 
 ```bash
-rqt_graph
+ros2 run rqt_graph rqt_graph
 ```
 
 This is one of the most useful debugging tools in ROS. When your robot is not behaving as expected, the computation graph often shows immediately whether nodes are connected correctly, whether topics have publishers and subscribers, and whether messages are flowing.

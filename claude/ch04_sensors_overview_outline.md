@@ -83,4 +83,4 @@ author: Claude Sonnet 4.6
   - `/imu` — IMU data (`Imu`)
   - `/camera/rgb/image_raw` — camera (Waffle only) (`Image`)
 - Visualize with RViz: see sensor data in real time in 3D
-- Inspect with `rostopic echo`, `rostopic hz`
+- Inspect with `ros2 topic echo`, `ros2 topic hz`

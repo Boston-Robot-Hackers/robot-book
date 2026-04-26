@@ -32,7 +32,7 @@ author: Claude Sonnet 4.6
 - Visualize live with:
 
 ```bash
-rqt_image_view
+ros2 run rqt_image_view rqt_image_view
 ```
 
 - Frame rate matters: ~10 fps in simulation, up to 30 fps on hardware

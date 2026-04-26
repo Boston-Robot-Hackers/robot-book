@@ -52,7 +52,7 @@ For remote development (robot on WiFi, processing on laptop), always subscribe t
 To see what the camera sees:
 
 ```bash
-rqt_image_view
+ros2 run rqt_image_view rqt_image_view
 ```
 
 This opens a GUI where you can select any image topic and see a live feed. It is the first thing to run when debugging camera-based code — verify the image looks right before spending time debugging the algorithm.

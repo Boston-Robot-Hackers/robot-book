@@ -103,5 +103,5 @@ def scan_callback(msg):
 - Dump raw scan to CSV for offline analysis:
 
 ```bash
-rostopic echo /scan -w 4 -p -n 50 > ~/scan_data.csv
+ros2 topic echo /scan --csv -n 50 > ~/scan_data.csv
 ```
