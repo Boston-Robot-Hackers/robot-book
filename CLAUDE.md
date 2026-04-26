@@ -50,3 +50,4 @@ When you are asked to draft the full chapter you need to expand the outline with
 [claude,copilot] Review all outlines for intro up to chapter 6 and correct if needed
 [copilot,claude] Generate full chapters for all of those remembering your latest insutrctions
 [claude] The source material is written for ROS1. Update everything to ROS2. Review all the chapters and make corrections, which include edits, additions and deletions.
+[claude] Add a section in the intro section explaining the origin of the source material and how the narrative was generated. Explain that mistakes are likely and to inform pitosalas@gmail.com of any mistakes. Add a similar but very brief one line disclainer at the bottom of the window of every page.

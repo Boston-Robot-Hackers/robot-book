@@ -311,6 +311,17 @@ header h1 span {
   box-shadow: var(--shadow);
 }
 
+/* ── Chapter footer ── */
+.chapter-footer {
+  max-width: 860px;
+  margin: 2rem auto 1rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.8rem;
+  color: var(--text-muted, #888);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
 /* ── Mermaid ── */
 .mermaid {
   background: var(--surface);

@@ -102,7 +102,17 @@ graph LR
 
 This architecture has an important consequence: robot software becomes modular. A LIDAR driver written for one robot works on any robot that uses the same LIDAR and publishes on the same topic. A localization algorithm written for a TurtleBot3 works on any differential-drive robot that publishes standard odometry and scan messages. Reuse is the norm rather than the exception.
 
-This book uses **ROS 1** (specifically ROS Noetic, released 2020, supported through 2025). ROS 2 is the current generation and improves on ROS 1 in several areas — better real-time support, improved security, more robust communication under unreliable networks. The architecture and concepts are largely the same between the two versions. Learning ROS 1 thoroughly is the most efficient path to understanding ROS 2, and the code patterns transfer directly.
+This book uses **ROS 2** (specifically ROS 2 Humble Hawksbill, released 2022, with long-term support through 2027). ROS 2 improves on ROS 1 in several important ways: no central `roscore` process to manage, better real-time support, improved security, and more robust communication under unreliable networks. All code examples and commands in this book are written for ROS 2.
+
+## I.7 About This Book's Origins
+
+The source material for this book comes from lecture notes, slides, and assignments developed over several years of teaching Autonomous Robotics (COSI 119a) at Brandeis University. That course material lives in two directories of Markdown files, accumulated across many semesters.
+
+The narrative text of this book was generated from that source material by AI language models — specifically Claude (Anthropic) and Copilot (Microsoft). Each chapter was drafted by one or both models working from the original course content. The AI was instructed to follow the source material closely, resolve cross-references, update all content from ROS 1 to ROS 2, and add diagrams and code examples where they help.
+
+This process is experimental. The source material was not originally written as a book, and the AI may have introduced errors, omissions, or outdated information when filling gaps. Technical claims should be verified against the official [ROS 2 documentation](https://docs.ros.org/en/humble/) and the [TurtleBot3 manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/).
+
+If you find a mistake — factual, technical, or conceptual — please report it to [pitosalas@gmail.com](mailto:pitosalas@gmail.com). Corrections are genuinely appreciated.
 
 ---
 
