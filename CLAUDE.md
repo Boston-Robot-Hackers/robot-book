@@ -49,5 +49,4 @@ When you are asked to draft the full chapter you need to expand the outline with
 [claude,copilot] Draft Chapter 6 outline: Computer Vision — cameras, OpenCV, line detection, fiducial markers.
 [claude,copilot] Review all outlines for intro up to chapter 6 and correct if needed
 [copilot,claude] Generate full chapters for all of those remembering your latest insutrctions
-[claude,copilot] Generate a robotbook.md which is simply the concatenation of all the full chapters in order, so that I can convert them to a pdf.
 [claude] The source material is written for ROS1. Update everything to ROS2. Review all the chapters and make corrections, which include edits, additions and deletions.
