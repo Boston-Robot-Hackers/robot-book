@@ -64,7 +64,7 @@ ros2 topic info /camera/rgb/image_raw # show message type and publishers
 
 ## 6.4 OpenCV and cv_bridge
 
-OpenCV (`cv2` in Python) is the standard library for computer vision processing. It operates on `numpy` arrays, not on ROS message objects. The bridge between the two worlds is the `cv_bridge` package, which converts `sensor_msgs/Image` messages to `numpy` arrays and back. The [cv_bridge ROS 2 documentation](https://docs.ros.org/en/humble/p/cv_bridge/) covers installation and the full API.
+OpenCV (`cv2` in Python) is the standard library for computer vision processing. It operates on `numpy` arrays, not on ROS message objects. The bridge between the two worlds is the `cv_bridge` package, which converts `sensor_msgs/Image` messages to `numpy` arrays and back. The [cv_bridge ROS 2 documentation](https://docs.ros.org/en/jazzy/p/cv_bridge/) covers installation and the full API.
 
 A minimal ROS 2 node that receives camera images and processes them:
 
