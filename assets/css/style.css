@@ -186,7 +186,7 @@ header h1 span {
 .chapter-wrap {
   max-width: 760px;
   margin: 0 auto;
-  padding: 3rem 2rem 4rem;
+  padding: 3rem 2rem 5rem;
 }
 
 .chapter-wrap h1 {
@@ -313,13 +313,17 @@ header h1 span {
 
 /* ── Chapter footer ── */
 .chapter-footer {
-  max-width: 860px;
-  margin: 2rem auto 1rem;
-  padding: 0.75rem 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.4rem 2rem;
   font-size: 0.8rem;
   color: var(--text-muted, #888);
+  background: var(--surface, #fff);
   border-top: 1px solid var(--border);
   text-align: center;
+  z-index: 100;
 }
 
 /* ── Mermaid ── */
