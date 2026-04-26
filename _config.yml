@@ -1,7 +1,9 @@
 title: Introduction to Robotics
 description: A robotics textbook comparing AI-generated drafts
-url: ""
-baseurl: ""
+url: "https://boston-robot-hackers.github.io"
+baseurl: "/robot-book"
+
+permalink: pretty
 
 markdown: kramdown
 highlighter: rouge
@@ -23,6 +25,7 @@ defaults:
 exclude:
   - CLAUDE.md
   - Gemfile
+  - .claude/
   - Gemfile.lock
   - vendor/
   - claude/summary.md
