@@ -275,5 +275,4 @@ Several practical issues affect vision-based robot code in ways that are easy to
 
 ---
 
-*Previous: [Chapter 5: Working with LIDAR](ch05_lidar.md)*
-*Next: [Chapter 7: ROS Introduction](ch07_ros_introduction.md)*
+*Previous: [Chapter 5: Working with LIDAR](../ch05_lidar/)*

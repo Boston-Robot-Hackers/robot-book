@@ -49,7 +49,7 @@ LIDAR data is reliable, fast, and relatively simple to process, which is why it 
 
 A camera captures a color image — a two-dimensional array of pixels, where each pixel carries red, green, and blue intensity values. In software, this is simply a 3D array of shape `(height, width, 3)`. The TurtleBot3 Waffle Pi includes a Raspberry Pi Camera Module (standard RGB); the Burger does not include a camera. Images are published on `/camera/rgb/image_raw` as `sensor_msgs/Image` messages.
 
-The processing library for camera images in robotics is OpenCV (`cv2` in Python). OpenCV provides an extensive toolkit: color space conversion, thresholding, edge detection, contour finding, template matching, feature detection, and much more. Chapter 6 covers the subset of OpenCV that is most useful for robot control.
+The processing library for camera images in robotics is OpenCV (`cv2` in Python). OpenCV provides an extensive toolkit: color space conversion, thresholding, edge detection, contour finding, template matching, feature detection, and much more. [Chapter 6](../ch06_computer_vision/) covers the subset of OpenCV that is most useful for robot control.
 
 One practical concern with cameras is data volume. A 640×480 image at 30 frames per second generates roughly 27 million pixel values per second. Over a WiFi link, this saturates bandwidth quickly. ROS addresses this with compressed image topics — `/camera/rgb/image_raw/compressed` publishes JPEG-compressed frames, and `/camera/rgb/image_raw/theora` publishes a compressed video stream. When working with a robot over wireless, always use compressed topics for transmission and decompress locally for processing.
 
@@ -137,5 +137,5 @@ For visual inspection, **RViz** is the primary tool. It can display LIDAR scans 
 
 ---
 
-*Previous: [Chapter 3: Robot Software Architecture](ch03_software_architecture.md)*
-*Next: [Chapter 5: Working with LIDAR](ch05_lidar.md)*
+*Previous: [Chapter 3: Robot Software Architecture](../ch03_software_architecture/)*
+*Next: [Chapter 5: Working with LIDAR](../ch05_lidar/)*

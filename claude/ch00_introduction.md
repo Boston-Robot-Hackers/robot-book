@@ -44,7 +44,7 @@ This book assumes you can write Python programs of moderate complexity — funct
 
 You will also need basic familiarity with Linux and the command line. ROS runs on Linux and is operated primarily through a terminal. You will use the shell constantly — to launch programs, inspect running processes, examine message streams, and manage files. Basic comfort is all that is required at the start; deeper skills accumulate naturally as you use them.
 
-No hardware or electronics knowledge is required. You do not need to know how motors work, how to solder, or how to read a circuit diagram. ROS provides a hardware abstraction layer that lets you write robot software without understanding the electronics underneath. That said, Chapter 2 gives you enough intuition about the physical layer to debug problems when the hardware behaves unexpectedly.
+No hardware or electronics knowledge is required. You do not need to know how motors work, how to solder, or how to read a circuit diagram. ROS provides a hardware abstraction layer that lets you write robot software without understanding the electronics underneath. That said, [Chapter 2](../ch02_robot_hardware/) gives you enough intuition about the physical layer to debug problems when the hardware behaves unexpectedly.
 
 Some math appears in the localization and Kalman filter chapters — specifically linear algebra and basic probability. Both are introduced from the ground up. Prior exposure makes the material easier, but it is not a prerequisite.
 
@@ -116,4 +116,4 @@ If you find a mistake — factual, technical, or conceptual — please report it
 
 ---
 
-*Next: [Chapter 1: Defining Robots](ch01_defining_robots.md)*
+*Next: [Chapter 1: Defining Robots](../ch01_defining_robots/)*

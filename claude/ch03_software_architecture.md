@@ -274,5 +274,5 @@ The next chapter moves from software to perception — how robots gather informa
 
 ---
 
-*Previous: [Chapter 2: Robot Hardware](ch02_robot_hardware.md)*
-*Next: [Chapter 4: Sensors Overview](ch04_sensors_overview.md)*
+*Previous: [Chapter 2: Robot Hardware](../ch02_robot_hardware/)*
+*Next: [Chapter 4: Sensors Overview](../ch04_sensors_overview/)*

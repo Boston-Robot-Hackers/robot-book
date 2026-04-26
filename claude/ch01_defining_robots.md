@@ -107,4 +107,4 @@ By the end, you will have both the conceptual foundation and the practical skill
 
 ---
 
-*Next: [Chapter 2: Robot Hardware](ch02_robot_hardware.md)*
+*Next: [Chapter 2: Robot Hardware](../ch02_robot_hardware/)*

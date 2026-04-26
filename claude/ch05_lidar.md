@@ -273,5 +273,5 @@ To capture scan data as CSV, use a short Python script that subscribes to `/scan
 
 ---
 
-*Previous: [Chapter 4: Sensors Overview](ch04_sensors_overview.md)*
-*Next: [Chapter 6: Computer Vision](ch06_computer_vision.md)*
+*Previous: [Chapter 4: Sensors Overview](../ch04_sensors_overview/)*
+*Next: [Chapter 6: Computer Vision](../ch06_computer_vision/)*

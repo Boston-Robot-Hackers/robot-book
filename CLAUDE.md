@@ -35,6 +35,15 @@ I will now write down a checklist of the process but I want you to do one at a t
 
 When you are asked to draft the full chapter you need to expand the outline with real narrative text, including diagrams, code and images if that makes sense. Follow the content of the source material but turn the bullets into sentences. You meay need to add your own public knowledge to that.
 
+The syntax for linking to another chapter or section is as follows:
+
+`[Chapter 3](../ch03_software_architecture/)`
+
+or 
+
+`[ROS computation graph](../ch03_software_architecture/#38-the-computation-graph)`
+
+
 [x] Review the contents of both directories and write a very high level summary of what you find
 [x] Create a markdown file in this directory with the high level summary
 [x] From the content omit info about guest speakers. Include a section of homework assignments at the end. Include a section of robot project ideas at the end.
@@ -49,5 +58,7 @@ When you are asked to draft the full chapter you need to expand the outline with
 [claude,copilot] Draft Chapter 6 outline: Computer Vision — cameras, OpenCV, line detection, fiducial markers.
 [claude,copilot] Review all outlines for intro up to chapter 6 and correct if needed
 [copilot,claude] Generate full chapters for all of those remembering your latest insutrctions
-[claude] The source material is written for ROS1. Update everything to ROS2. Review all the chapters and make corrections, which include edits, additions and deletions.
-[claude] Add a section in the intro section explaining the origin of the source material and how the narrative was generated. Explain that mistakes are likely and to inform pitosalas@gmail.com of any mistakes. Add a similar but very brief one line disclainer at the bottom of the window of every page.
+[claude,copilot] The source material is written for ROS1. Update everything to ROS2. Review all the chapters and make corrections, which include edits, additions and deletions.
+[copilot] Add a section in the intro section explaining the origin of the source material and how the narrative was generated. Explain that mistakes are likely and to inform pitosalas@gmail.com of any mistakes. Add a similar but very brief one line disclainer at the bottom of the window of every page.
+[claude] Locate opportunties for links to the other chapters. Use the synax taught above to set them up in markdown
+

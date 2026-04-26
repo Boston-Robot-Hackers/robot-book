@@ -84,7 +84,7 @@ Scan array: [d₀, d₁, d₂, ..., d₃₅₉]
 Each dᵢ = distance in meters to nearest obstacle at bearing i°
 ```
 
-The TurtleBot3 Burger uses a YDLIDAR X4, which produces a 360° scan. This scan is published on the `/scan` topic as a `sensor_msgs/LaserScan` message at roughly 5–10 Hz. Chapter 5 covers how to work with this data in detail.
+The TurtleBot3 Burger uses a YDLIDAR X4, which produces a 360° scan. This scan is published on the `/scan` topic as a `sensor_msgs/LaserScan` message at roughly 5–10 Hz. [Chapter 5](../ch05_lidar/) covers how to work with this data in detail.
 
 One important limitation deserves emphasis: a 2D LIDAR operates in a single horizontal plane, like a disk cutting through space at the height of the sensor. It is completely blind to anything above or below that plane. A chair leg at floor level is visible; the seat of the chair overhanging the robot is invisible. This geometric blind spot is a frequent source of surprising robot behavior and must be accounted for in any real deployment.
 
@@ -92,7 +92,7 @@ One important limitation deserves emphasis: a 2D LIDAR operates in a single hori
 
 A camera captures a color image — a 2D matrix of pixels, each carrying red, green, and blue values. In code this is simply `pixel[x, y] = {r, g, b}`. The TurtleBot3 Waffle Pi includes a Raspberry Pi Camera; the Burger does not. Images are published on `/camera/rgb/image_raw` as `sensor_msgs/Image` messages.
 
-The processing library for camera images in robotics is **OpenCV** (Open Computer Vision). OpenCV provides functions for color filtering, edge detection, blob finding, marker detection, and much more. Chapter 6 covers the basics of using OpenCV with ROS.
+The processing library for camera images in robotics is **OpenCV** (Open Computer Vision). OpenCV provides functions for color filtering, edge detection, blob finding, marker detection, and much more. [Chapter 6](../ch06_computer_vision/) covers the basics of using OpenCV with ROS.
 
 Camera data volume is high. At 640×480 resolution and 30 frames per second, a camera generates nearly 28 million pixel values per second. Over WiFi this creates real bandwidth pressure — compressed topics (`/compressed`, `/theora`) exist specifically to address this.
 
@@ -193,5 +193,5 @@ Every time your code interacts with any of these topics, it is interacting with 
 
 ---
 
-*Previous: [Chapter 1: Defining Robots](ch01_defining_robots.md)*
-*Next: [Chapter 3: Robot Software Architecture](ch03_software_architecture.md)*
+*Previous: [Chapter 1: Defining Robots](../ch01_defining_robots/)*
+*Next: [Chapter 3: Robot Software Architecture](../ch03_software_architecture/)*
