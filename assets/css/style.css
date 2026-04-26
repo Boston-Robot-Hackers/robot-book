@@ -36,9 +36,16 @@ header {
   max-width: 900px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 1.2rem 0 0;
+}
+
+.header-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted, #888);
+  margin: 0.15rem 0 0;
+  font-weight: 400;
 }
 
 header h1 {
