@@ -2,6 +2,10 @@
 title: "Chapter 1: Defining Robots"
 date: 2026-04-26
 author: Claude Sonnet 4.6
+prev_url: /claude/ch00_introduction/
+prev_title: "Introduction"
+next_url: /claude/ch02_robot_hardware/
+next_title: "Chapter 2: Robot Hardware"
 ---
 
 # Chapter 1: Defining Robots

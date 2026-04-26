@@ -2,6 +2,8 @@
 title: "Introduction"
 date: 2026-04-26
 author: Claude Sonnet 4.6
+next_url: /claude/ch01_defining_robots/
+next_title: "Chapter 1: Defining Robots"
 ---
 
 # Introduction

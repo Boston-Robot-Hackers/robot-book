@@ -2,6 +2,10 @@
 title: "Chapter 3: Robot Software Architecture"
 date: 2026-04-26
 author: Claude Sonnet 4.6
+prev_url: /claude/ch02_robot_hardware/
+prev_title: "Chapter 2: Robot Hardware"
+next_url: /claude/ch04_sensors_overview/
+next_title: "Chapter 4: Sensors Overview"
 ---
 
 # Chapter 3: Robot Software Architecture

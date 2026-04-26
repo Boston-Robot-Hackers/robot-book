@@ -2,6 +2,10 @@
 title: "Chapter 5: Working with LIDAR"
 date: 2026-04-26
 author: Claude Sonnet 4.6
+prev_url: /claude/ch04_sensors_overview/
+prev_title: "Chapter 4: Sensors Overview"
+next_url: /claude/ch06_computer_vision/
+next_title: "Chapter 6: Computer Vision"
 ---
 
 # Chapter 5: Working with LIDAR

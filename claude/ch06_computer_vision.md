@@ -2,6 +2,8 @@
 title: "Chapter 6: Computer Vision"
 date: 2026-04-26
 author: Claude Sonnet 4.6
+prev_url: /claude/ch05_lidar/
+prev_title: "Chapter 5: Working with LIDAR"
 ---
 
 # Chapter 6: Computer Vision

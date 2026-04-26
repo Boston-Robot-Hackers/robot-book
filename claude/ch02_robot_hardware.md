@@ -2,6 +2,10 @@
 title: "Chapter 2: Robot Hardware"
 date: 2026-04-26
 author: Claude Sonnet 4.6
+prev_url: /claude/ch01_defining_robots/
+prev_title: "Chapter 1: Defining Robots"
+next_url: /claude/ch03_software_architecture/
+next_title: "Chapter 3: Robot Software Architecture"
 ---
 
 # Chapter 2: Robot Hardware

@@ -11,18 +11,6 @@
   {% assign path_parts = page.path | split: "/" %}
   {% assign collection = path_parts[0] %}
 
-  {% assign siblings = site.pages | where_exp: "p", "p.path contains collection" | sort: "path" %}
-  {% assign current_index = nil %}
-  {% for p in siblings %}
-    {% if p.path == page.path %}{% assign current_index = forloop.index0 %}{% endif %}
-  {% endfor %}
-  {% if current_index %}
-    {% assign prev_index = current_index | minus: 1 %}
-    {% assign next_index = current_index | plus: 1 %}
-    {% if prev_index >= 0 %}{% assign prev_ch = siblings[prev_index] %}{% endif %}
-    {% if next_index < siblings.size %}{% assign next_ch = siblings[next_index] %}{% endif %}
-  {% endif %}
-
   <header>
     <div class="header-inner">
       <h1><a href="{{ '/' | relative_url }}">Introduction to <span>Robotics</span></a></h1>
@@ -33,8 +21,16 @@
       <a class="tab-btn {% if collection == 'copilot' %}active{% endif %}"
          href="{{ '/' | relative_url }}#copilot">Copilot</a>
       <span class="tab-spacer"></span>
-      {% if prev_ch %}<a class="tab-btn tab-nav" href="{{ prev_ch.url | relative_url }}">← Previous</a>{% endif %}
-      {% if next_ch %}<a class="tab-btn tab-nav" href="{{ next_ch.url | relative_url }}">Next →</a>{% endif %}
+      {% if page.prev_url %}
+        <a class="tab-btn tab-nav" href="{{ page.prev_url | prepend: site.baseurl }}">← Previous</a>
+      {% else %}
+        <span class="tab-btn tab-nav tab-nav-disabled">← Previous</span>
+      {% endif %}
+      {% if page.next_url %}
+        <a class="tab-btn tab-nav" href="{{ page.next_url | prepend: site.baseurl }}">Next →</a>
+      {% else %}
+        <span class="tab-btn tab-nav tab-nav-disabled">Next →</span>
+      {% endif %}
     </div>
   </header>
 

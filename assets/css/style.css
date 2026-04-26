@@ -111,6 +111,12 @@ header h1 span {
   opacity: 1;
 }
 
+.tab-btn.tab-nav-disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* ── Index page ── */
 .index-content {
   max-width: 900px;
