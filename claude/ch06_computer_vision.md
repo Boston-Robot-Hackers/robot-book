@@ -64,7 +64,7 @@ ros2 topic info /camera/rgb/image_raw # show message type and publishers
 
 ## 6.4 OpenCV and cv_bridge
 
-OpenCV (`cv2` in Python) is the standard library for computer vision processing. It operates on `numpy` arrays, not on ROS message objects. The bridge between the two worlds is the `cv_bridge` package, which converts `sensor_msgs/Image` messages to `numpy` arrays and back.
+OpenCV (`cv2` in Python) is the standard library for computer vision processing. It operates on `numpy` arrays, not on ROS message objects. The bridge between the two worlds is the `cv_bridge` package, which converts `sensor_msgs/Image` messages to `numpy` arrays and back. The [cv_bridge ROS 2 documentation](https://docs.ros.org/en/humble/p/cv_bridge/) covers installation and the full API.
 
 A minimal ROS 2 node that receives camera images and processes them:
 
@@ -245,7 +245,7 @@ The two most widely used fiducial systems in ROS robotics are:
 
 **ArUco markers** — developed at the University of Córdoba, integrated into OpenCV. The `aruco_detect` ROS package detects ArUco markers and publishes their poses as `fiducial_msgs/FiducialTransformArray` messages.
 
-**AprilTags** — developed at the University of Michigan, widely used in research robotics. The `apriltag_ros` package provides full ROS integration.
+**AprilTags** — developed at the University of Michigan, widely used in research robotics. The `apriltag_ros` package provides full ROS integration. Olson's original paper [AprilTag: A robust and flexible visual fiducial system](https://april.eecs.umich.edu/pdfs/olson2011tags.pdf) explains the encoding scheme and detection algorithm; it is worth reading to understand why AprilTags are more reliable than simpler QR-code-style markers under poor lighting and at oblique angles.
 
 Both systems work in varied lighting, from multiple distances, and at moderate angles. They provide sub-centimeter position accuracy at close range. Typical uses in robot applications include: labeling goal locations the robot should navigate to, providing absolute position references to correct odometry drift, enabling visual docking, and coordinating multi-robot systems where robots need to recognize each other.
 

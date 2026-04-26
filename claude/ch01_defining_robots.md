@@ -38,7 +38,7 @@ Airport trams have run without human drivers for decades, following fixed guidew
 
 ### Bomb Disposal Robots
 
-When a suspicious object needs to be examined, a robot can go instead of a person. Bomb disposal systems typically sit somewhere on the spectrum between remote-controlled and autonomous: a human operator drives the robot to the scene using video from the robot's cameras, then uses manipulator arms to examine or move the object. As autonomy research progresses, more of the moment-to-moment decision-making is shifting to the robot itself. The primary value is clear: keeping humans out of danger.
+When a suspicious object needs to be examined, a robot can go instead of a person. Bomb disposal systems typically sit somewhere on the spectrum between remote-controlled and autonomous: a human operator drives the robot to the scene using video from the robot's cameras, then uses manipulator arms to examine or move the object. As autonomy research progresses, more of the moment-to-moment decision-making is shifting to the robot itself. The primary value is clear: keeping humans out of danger. Murphy's 2004 study [Human-robot interaction in rescue robotics](https://ieeexplore.ieee.org/document/1284435) analyzed how operators and robots work together under stress and remains a foundational reference on the human side of this problem.
 
 ### Domestic Robots
 
@@ -79,6 +79,8 @@ graph LR
 A bomb disposal robot is mostly teleoperated; a Roomba is highly autonomous for a narrow task; a self-driving car targets full autonomy in complex open environments; a surgical robot amplifies human skill without replacing human judgment. All four are robots.
 
 A useful working definition, then: **a robot is a physical machine that senses its environment, makes decisions based on those sensors, and takes physical actions in the world — with some degree of autonomy over that process.**
+
+One influential approach to robot decision-making, called **behavior-based robotics**, replaces a single centralized decision module with a collection of simple reactive behaviors that run in parallel and compete to control the robot. Rodney Brooks introduced this with his [subsumption architecture](https://www.semanticscholar.org/paper/A-robust-layered-control-system-for-a-mobile-robot-Brooks/dc66c15a005dd1a3a9f033769e7fbc3b943be188), where higher-level behaviors can suppress or override lower-level ones — much like reflexes and deliberation work together in animals. De Silva and Ekanayake provide a broader [survey of behavior-based approaches](http://www.cs.utah.edu/~alnds/papers/behavior_robotics_2008.pdf) for readers who want to go deeper.
 
 The sense-decide-act loop below is the central pattern this definition captures:
 

@@ -104,7 +104,7 @@ A depth camera augments each pixel with a distance measurement: `pixel[x, y] = {
 
 Encoders are sensors built into the wheel motors that count how far each wheel has rotated. As the wheel turns, the encoder generates pulses — typically hundreds per revolution. Counting those pulses tells you how far the wheel has traveled, which tells you (approximately) how far and in what direction the robot has moved. This motion estimate, accumulated over time, is called **odometry**, and it is published on the `/odom` topic.
 
-Odometry is the robot's primary self-localization signal, but it accumulates error. Wheels slip. Floors are not perfectly flat. The error grows with distance traveled. A robot relying solely on odometry will eventually lose track of where it is. Later chapters describe how to combine odometry with LIDAR to build more reliable position estimates.
+Odometry is the robot's primary self-localization signal, but it accumulates error. Wheels slip. Floors are not perfectly flat. The error grows with distance traveled. A robot relying solely on odometry will eventually lose track of where it is. Fred Martin's paper [Real Robots Don't Drive Straight](https://www.aaai.org/Papers/Symposia/Spring/2007/SS-07-09/SS07-09-020.pdf) is a short, readable account of exactly how and why this happens — required reading for anyone surprised that their robot curves when they commanded it to go straight. Later chapters describe how to combine odometry with LIDAR to build more reliable position estimates.
 
 ### IMU (Inertial Measurement Unit)
 
@@ -147,7 +147,7 @@ As robots become more capable and deployments more autonomous, the trend is towa
 
 ## 2.5 The TurtleBot3
 
-The TurtleBot3 from Robotis is the platform used throughout this book. Two models exist: the **Burger** (smaller, no camera, ~$300) and the **Waffle Pi** (larger, includes camera, ~$600). Both use the same software stack and are interchangeable for most of this book's content.
+The TurtleBot3 from Robotis is the platform used throughout this book. Two models exist: the **Burger** (smaller, no camera, ~$300) and the **Waffle Pi** (larger, includes camera, ~$600). Both use the same software stack and are interchangeable for most of this book's content. The [official TurtleBot3 manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) covers hardware assembly, firmware flashing, and ROS 2 bringup in detail — consult it whenever you need to set up or troubleshoot the physical robot.
 
 The Burger's hardware, from the ground up: two Dynamixel XL430 servo motors, each with a built-in encoder, drive the two powered wheels. A passive caster wheel at the rear provides stability. An OpenCR microcontroller board sits in the middle of the chassis, connected to both motors via the Dynamixel protocol. A YDLIDAR X4 sits on top, connected to the Raspberry Pi via USB. The Raspberry Pi 3B+ (or 4) sits between the LIDAR and the battery, running Ubuntu 20.04 and ROS Noetic. The whole stack runs from a 11.1V LiPo battery.
 

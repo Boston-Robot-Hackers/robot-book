@@ -60,5 +60,6 @@ or
 [copilot,claude] Generate full chapters for all of those remembering your latest insutrctions
 [claude,copilot] The source material is written for ROS1. Update everything to ROS2. Review all the chapters and make corrections, which include edits, additions and deletions.
 [copilot] Add a section in the intro section explaining the origin of the source material and how the narrative was generated. Explain that mistakes are likely and to inform pitosalas@gmail.com of any mistakes. Add a similar but very brief one line disclainer at the bottom of the window of every page.
-[claude] Locate opportunties for links to the other chapters. Use the synax taught above to set them up in markdown
-
+[claude,copilot] Locate opportunties for links to the other chapters. Use the synax taught above to set them up in markdown
+[copilot,claude] Find relevant papers and articles from other content in cg-topics/ and the course and incorporate them in smart spots
+[copilot,claude] Find possible links to ROS2 documentation and put them in the right places

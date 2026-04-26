@@ -32,6 +32,8 @@ What that means in practice: ROS provides the infrastructure for running many sm
 
 You write the nodes. ROS handles everything else.
 
+The official documentation for ROS 2 Humble is at [docs.ros.org/en/humble](https://docs.ros.org/en/humble/). When any concept in this chapter needs more depth — DDS transport, QoS settings, lifecycle nodes — that is the authoritative reference.
+
 ## 3.3 Nodes
 
 A **node** is a single running program — a process — that does one thing. Examples:
@@ -75,7 +77,7 @@ if __name__ == '__main__':
 
 This node publishes an incrementing integer to a topic called `counter` at 2 Hz. That is all it does. Another node somewhere else on the network can subscribe to `counter` and receive those integers.
 
-ROS 2 nodes are written as classes that inherit from `Node`. This is more structured than ROS 1's procedural style, but it makes concurrency and lifecycle management much cleaner. Each node instance owns its publishers, subscribers, timers, and clients.
+ROS 2 nodes are written as classes that inherit from `Node`. This is more structured than ROS 1's procedural style, but it makes concurrency and lifecycle management much cleaner. Each node instance owns its publishers, subscribers, timers, and clients. The [rclpy API documentation](https://docs.ros2.org/humble/api/rclpy/) covers all available methods on `Node` and the other core classes.
 
 ## 3.4 Topics and Messages
 
@@ -106,7 +108,7 @@ ros2 topic hz /scan          # measure publish rate
 
 ROS 1 required a central `roscore` process — a global coordinator that every node had to contact before it could communicate. If `roscore` crashed, the entire system stopped.
 
-ROS 2 eliminates this single point of failure. Communication is built on **DDS** (Data Distribution Service), an industrial middleware standard. DDS uses peer-to-peer discovery: nodes find each other automatically using multicast announcements, with no central coordinator. You simply start your nodes — in any order, on any machines on the same network — and they discover each other.
+ROS 2 eliminates this single point of failure. Communication is built on **DDS** (Data Distribution Service), an industrial middleware standard. DDS uses peer-to-peer discovery: nodes find each other automatically using multicast announcements, with no central coordinator. You simply start your nodes — in any order, on any machines on the same network — and they discover each other. The [ROS 2 DDS documentation](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Different-Middleware-Vendors.html) explains the available DDS implementations and how to switch between them.
 
 This changes the development workflow:
 - No `roscore` to start first

@@ -10,7 +10,7 @@ LIDAR is the workhorse sensor of indoor mobile robotics. It is fast, reliable, a
 
 ## 5.1 The LaserScan Message
 
-LIDAR data arrives in ROS 2 as `sensor_msgs/LaserScan` messages on the `/scan` topic. To use it, subscribe within a Node class:
+LIDAR data arrives in ROS 2 as `sensor_msgs/LaserScan` messages on the `/scan` topic. The full field specification is in the [sensor_msgs/LaserScan API reference](https://docs.ros2.org/humble/api/sensor_msgs/msg/LaserScan.html). To use it, subscribe within a Node class:
 
 ```python
 from sensor_msgs.msg import LaserScan
@@ -248,7 +248,7 @@ if __name__ == '__main__':
     main()
 ```
 
-This is a purely reactive controller: it reads sensor data and immediately produces a motor command. No state, no memory, no map. Reactive controllers are simple and fast, but they cannot handle complex environments. More sophisticated behaviors — wall following, navigation, exploration — build on this pattern while adding state and more sophisticated decision logic.
+This is a purely reactive controller: it reads sensor data and immediately produces a motor command. No state, no memory, no map. Reactive controllers are simple and fast, but they cannot handle complex environments. More sophisticated behaviors — wall following, navigation, exploration — build on this pattern while adding state and more sophisticated decision logic. For a thorough treatment of wall-following specifically, Bayer's [Wall Following for Autonomous Navigation](https://sunfest.seas.upenn.edu/wp-content/uploads/2018/07/12-bayer.pdf) is a practical reference that maps directly to TurtleBot-scale robots.
 
 ## 5.8 Visualizing LIDAR Data in RViz
 
