@@ -1,0 +1,40 @@
+title: Introduction to Robotics
+description: A robotics textbook comparing AI-generated drafts
+url: ""
+baseurl: ""
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  - scope:
+      path: "claude"
+    values:
+      layout: chapter
+  - scope:
+      path: "copilot"
+    values:
+      layout: chapter
+
+exclude:
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - claude/summary.md
+  - claude/outline.md
+  - claude/ch04_sensors_overview_outline.md
+  - claude/ch05_lidar_outline.md
+  - claude/ch06_computer_vision_outline.md
+  - copilot/high_level_summary.md
+  - copilot/proposed_outline.md
+  - copilot/intro_outline.md
+  - copilot/chapter1_outline.md
+  - copilot/chapter3_software_arch_outline.md
+  - copilot/chapter4_sensors_overview_outline.md
+  - copilot/chapter5_lidar_outline.md
+  - copilot/chapter6_computer_vision_outline.md
