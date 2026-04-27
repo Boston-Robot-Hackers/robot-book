@@ -2,9 +2,9 @@
 title: Working with LIDAR
 author: GPT-4.1
 date: 2026-04-26
-prev_url: /copilot/chapter4_sensors_overview/
+prev_url: /copilot/book/chapter4_sensors_overview/
 prev_title: "Chapter 4: Sensors Overview"
-next_url: /copilot/chapter6_computer_vision/
+next_url: /copilot/book/chapter6_computer_vision/
 next_title: "Chapter 6: Computer Vision"
 ---
 
@@ -73,10 +73,21 @@ ros2 topic echo --csv /scan | head -n 50 > ~/scan_data.csv
 
 This records 50 messages from the `/scan` topic for later analysis in a spreadsheet or plotting tool.
 
+## Assignments
+
+The following assignments relate to LIDAR topics in this chapter:
+
+- **PA: Lidar Wall Follow** — Using LIDAR sensing to drive the robot along a wall
+- **PA: Maze Escape!** — Use wall-following algorithms in a maze escape
+- **Mini-PA: Filter Scan** (Lab 8) — Filter raw scan data before using it for navigation
+- **Mini-PA: Robo Chaser** (Lab 9) — Use LIDAR distance data to follow a target robot
+
 ## 5.6 Further Reading
 - [YDLIDAR X4](https://www.ydlidar.com/products/view/5.html)
 - [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/)
-- [RViz2](https://github.com/ros2/rviz)
+- [RViz2 User Guide](https://docs.ros.org/en/rolling/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
+- [SLAM Toolbox (ROS 2)](https://docs.ros.org/en/rolling/p/slam_toolbox/) — the standard package for 2D LIDAR-based simultaneous localization and mapping in ROS 2
+- [Nav2 — Navigation Stack for ROS 2](https://nav2.ros.org/) — the full navigation framework that uses LIDAR data for costmaps, path planning, and obstacle avoidance
 
 ### Relevant Papers
 - Riisgaard & Blas, ["SLAM for Dummies: A Tutorial Approach to Simultaneous Localization and Mapping" (2004)](https://dspace.mit.edu/bitstream/handle/1721.1/36832/16-412JSpring2004/NR/rdonlyres/Aeronautics-and-Astronautics/16-412JSpring2004/A3C5517F-C092-4554-AA43-232DC74609B3/0/1Aslam_blas_report.pdf) — the most accessible introduction to how LIDAR scans are used to build maps and localize simultaneously.

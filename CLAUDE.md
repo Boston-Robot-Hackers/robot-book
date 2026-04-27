@@ -14,7 +14,7 @@ When using content from source materials, check wherever possible that it is rea
 
 Include source code blocks wherever they help make concepts concrete and real — a well-chosen code example is often worth more than a paragraph of explanation.
 
-The final book should be markdown with mermaid diagrams. It should contain links to public content if apprppriate. It can also include links to other parts of the book.
+The final book should be markdown with mermaid diagrams. It should contain links to public content if apprppriate. It can also include links to other parts of the book.It will contain numerous links between sections, and to papers, and to documentation sites.
 
 You will only write to this directory, /Users/pitosalas/mydev/robotbook
 
@@ -27,7 +27,9 @@ The content is all in markdown with the addition of some special directives. Spe
 
 :topic_include :what_is_ros
 
-This means that you will search the cg-topics/ directory efficiently, and find one file with front matter title: what is ros. And you will consider that text to be insertted replacing the :topic_incldue directive. A similar directive :topic_link :what_is_ros works the same way but inserts a link to that content.
+This means that you will search the cg-topics/ directory efficiently, and find one file with front matter title: what is ros. You must locate that other file.
+
+Consider that text to be inserted replacing the :topic_incldue directive. A similar directive :topic_link :what_is_ros works the same way but inserts a link to that content.
 
 Every file you create should have frontmatter indicating a title for the content, date, author. Author is the name of the llm that created the file.
 
@@ -63,3 +65,12 @@ or
 [claude,copilot] Locate opportunties for links to the other chapters. Use the synax taught above to set them up in markdown
 [copilot,claude] Find relevant papers and articles from other content in cg-topics/ and the course and incorporate them in smart spots
 [copilot,claude] Find possible links to ROS2 documentation and put them in the right places
+[copilot] Go back through the chapters you generated and locate any that still are primarily bullets. Correct those.
+[copilot] Create a new chapter at the end with homework assignments
+[copilot] Create a new chapter at the end with projects
+[copilot] Move all the markdown files that are actual chapters in your directory into a new subdirectory book/ and update the github page generation accordingly. Put the remaining ones in a new subdirectory wip/
+[copilot] Proceed in the same way and complete all the chapters in the outline
+[copilot] Create a new chapter at the end with the best papers to read
+[copilot] Call the intro chapter chapter00_intro.md
+
+

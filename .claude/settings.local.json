@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/pitosalas/mydev/robotbook status)",
+      "Bash(git -C /Users/pitosalas/mydev/robotbook log --oneline -3)",
+      "Bash(git -C /Users/pitosalas/mydev/robotbook diff --cached)",
+      "Bash(git -C /Users/pitosalas/mydev/robotbook add .github/ Gemfile README.md _config.yml _layouts/ assets/ index.html)",
+      "Bash(git -C /Users/pitosalas/mydev/robotbook add -u)",
+      "Bash(git *)"
+    ]
+  }
+}

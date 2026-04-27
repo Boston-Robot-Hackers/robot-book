@@ -2,9 +2,9 @@
 title: Robot Software Architecture
 author: GPT-4.1
 date: 2026-04-26
-prev_url: /copilot/chapter2_robot_hardware/
+prev_url: /copilot/book/chapter2_robot_hardware/
 prev_title: "Chapter 2: Robot Hardware"
-next_url: /copilot/chapter4_sensors_overview/
+next_url: /copilot/book/chapter4_sensors_overview/
 next_title: "Chapter 4: Sensors Overview"
 ---
 
@@ -48,6 +48,8 @@ The Robot Operating System (ROS) is the most widely used framework for robot sof
 - **Topics:** Nodes communicate by publishing and subscribing to topics. For example, a LIDAR node publishes sensor data on a `/scan` topic (see [Chapter 5: Working with LIDAR](chapter5_lidar.md)), while a mapping node subscribes to that topic to build a map. See the [ROS 2 Topics documentation](https://docs.ros.org/en/rolling/Concepts/Basic/About-Topics.html).
 - **Services:** For request/response interactions, nodes can offer services. For example, a node might provide a service to reset the robot's position or query its battery level. See [ROS 2 Services documentation](https://docs.ros.org/en/rolling/Concepts/Basic/About-Services.html).
 - **Actions:** Some tasks, like navigation, take time and require feedback. ROS actions support long-running goals with progress updates and the ability to cancel or preempt tasks. See [ROS 2 Actions documentation](https://docs.ros.org/en/rolling/Concepts/Basic/About-Actions.html).
+- **Parameters:** Nodes can expose configuration values as parameters that can be read, set, and monitored at runtime without recompiling. See [ROS 2 Parameters documentation](https://docs.ros.org/en/rolling/Concepts/Basic/About-ROS-2-Parameters.html).
+- **Launch files:** Multiple nodes are typically started together using launch files, which also set parameters and remappings. See [ROS 2 Launch System documentation](https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Launch.html).
 
 ROS abstracts away hardware details, allowing developers to focus on high-level logic. It also provides powerful tools for simulation (Gazebo), visualization (RViz), and debugging. The modularity of ROS means that code can be reused across different robots and projects, accelerating development and fostering collaboration.
 
@@ -89,11 +91,22 @@ graph TD
 
 This architecture allows the TurtleBot3 to perform complex tasks like simultaneous localization and mapping (SLAM), obstacle avoidance, and autonomous navigation—all using modular, reusable software components.
 
+## Assignments
+
+The following assignments relate to ROS software architecture topics in this chapter:
+
+- **Lab 4:** Do teleop_bot — PID control introduction
+- **Lab 6:** Working with radians, Multiple Robots and Custom Messages
+- **HW: TF2 Tutorial Extension** — Understanding transforms (tf2), a core ROS 2 concept
+- **HW: Dependency on Initial Conditions** — Verify whether your basic_mover worked as expected
+
 ## 3.5 Further Reading
 
 To deepen your understanding of robot software architecture and ROS, explore these resources:
 
 - [ROS 2 Documentation](https://docs.ros.org/en/rolling/)
+- [ROS 2 Beginner CLI Tools Tutorial](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools.html) — essential for inspecting topics, nodes, and services at the command line
+- [ROS 2 Concepts Overview](https://docs.ros.org/en/rolling/Concepts.html) — the full map of nodes, topics, services, actions, parameters, and the computation graph
 - [TurtleBot3 Software Architecture](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
 
 ### Relevant Papers

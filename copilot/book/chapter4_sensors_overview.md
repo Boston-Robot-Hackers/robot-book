@@ -2,9 +2,9 @@
 title: Sensors Overview
 author: GPT-5.3-Codex (Copilot)
 date: 2026-04-26
-prev_url: /copilot/chapter3_software_arch/
+prev_url: /copilot/book/chapter3_software_arch/
 prev_title: "Chapter 3: Robot Software Architecture"
-next_url: /copilot/chapter5_lidar/
+next_url: /copilot/book/chapter5_lidar/
 next_title: "Chapter 5: Working with LIDAR"
 ---
 
@@ -55,7 +55,7 @@ Odometry is the robot's estimate of how it has moved over time, usually derived 
 
 An IMU (Inertial Measurement Unit) contributes accelerometer and gyroscope data, helping estimate orientation and turn dynamics. In practical robot stacks, odometry and IMU are fused to produce a more stable state estimate than either source alone.
 
-The key limitation is drift. Small wheel slip and bias errors accumulate, so long-duration accuracy requires periodic correction from external references such as LIDAR-based localization or visual landmarks.
+The key limitation is drift. Small wheel slip and bias errors accumulate, so long-duration accuracy requires periodic correction from external references such as LIDAR-based localization or visual landmarks. In ROS 2, odometry and IMU are often fused using the [robot_localization package](https://docs.ros.org/en/rolling/p/robot_localization/), which implements Extended Kalman Filtering to blend multiple source estimates. Coordinate frames for odometry are managed through [tf2](https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Tf2.html), the ROS 2 transform library.
 
 ```python
 # ROS 2-style callback sketch for scan + odom integration points
@@ -101,6 +101,8 @@ This layered approach is the foundation for [Chapter 5: Working with LIDAR](chap
 - [Odometry (ROS 2 nav_msgs)](https://docs.ros2.org/latest/api/nav_msgs/msg/Odometry.html)
 - [Imu (ROS 2 sensor_msgs)](https://docs.ros2.org/latest/api/sensor_msgs/msg/Imu.html)
 - [Image (ROS 2 sensor_msgs)](https://docs.ros2.org/latest/api/sensor_msgs/msg/Image.html)
+- [tf2 — coordinate frame transforms](https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Tf2.html)
+- [robot_localization — sensor fusion with EKF](https://docs.ros.org/en/rolling/p/robot_localization/)
 - [YDLIDAR X4](https://www.ydlidar.com/products/view/5.html)
 - [OpenCV](https://opencv.org/)
 - [TurtleBot3 Overview](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)

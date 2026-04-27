@@ -18,7 +18,7 @@ defaults:
     values:
       layout: chapter
   - scope:
-      path: "copilot"
+      path: "copilot/book"
     values:
       layout: chapter
 
@@ -33,11 +33,4 @@ exclude:
   - claude/ch04_sensors_overview_outline.md
   - claude/ch05_lidar_outline.md
   - claude/ch06_computer_vision_outline.md
-  - copilot/high_level_summary.md
-  - copilot/proposed_outline.md
-  - copilot/intro_outline.md
-  - copilot/chapter1_outline.md
-  - copilot/chapter3_software_arch_outline.md
-  - copilot/chapter4_sensors_overview_outline.md
-  - copilot/chapter5_lidar_outline.md
-  - copilot/chapter6_computer_vision_outline.md
+  - copilot/wip/

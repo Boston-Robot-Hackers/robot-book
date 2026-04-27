@@ -2,7 +2,7 @@
 title: Introduction
 author: GPT-4.1
 date: 2026-04-26
-next_url: /copilot/chapter1_robots/
+next_url: /copilot/book/chapter1_robots/
 next_title: "Chapter 1: Defining Robots"
 ---
 
@@ -40,9 +40,19 @@ This book emphasizes learning by doing. You will:
 
 No prior experience with robotics or ROS is required, but familiarity with basic programming and mathematics will be helpful. The goal is to make robotics accessible, engaging, and relevant.
 
+## Assignments
+
+The following assignments accompany this introductory material:
+
+- **Lab 1:** Check environments, do series of tutorials, work on homework
+- **Lab 2:** Practice Topics, Messages, Services and Actions
+- **HW: Hello Robot!** — First running program on the robot
+
 ## Further Reading and Resources
 - [Robotis Turtlebot3 Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
 - [ROS 2 Documentation](https://docs.ros.org/en/rolling/)
+- [ROS 2 Installation Guide](https://docs.ros.org/en/rolling/Installation.html)
+- [ROS 2 Tutorials](https://docs.ros.org/en/rolling/Tutorials.html)
 - [YDLIDAR X4](https://www.ydlidar.com/products/view/5.html)
 - [URDF documentation](https://docs.ros.org/en/rolling/Tutorials/Intermediate/URDF/URDF-Main.html)
 - [Boston is a global hub for robotics!](https://masstech.org/robotics)
