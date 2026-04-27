@@ -2,6 +2,8 @@
 title: Introduction
 author: GPT-4.1
 date: 2026-04-26
+next_url: /copilot/chapter1_robots/
+next_title: "Chapter 1: Defining Robots"
 ---
 
 
@@ -20,10 +22,10 @@ Robotics is inherently hands-on. Building and programming robots provides immedi
 ## Structure of This Book
 This book is organized to guide you from foundational concepts to hands-on practice:
 
-- **Defining Robots:** What makes a robot a robot?
-- **Robot Hardware:** Locomotion, actuators, sensors, and computing platforms
-- **Robot Software Architecture:** Why robots need special software, distributed systems, and ROS
-- **Perception, Planning, and Control:** How robots sense, decide, and act
+- **[Defining Robots](chapter1_robots.md):** What makes a robot a robot?
+- **[Robot Hardware](chapter2_robot_hardware.md):** Locomotion, actuators, sensors, and computing platforms
+- **[Robot Software Architecture](chapter3_software_arch.md):** Why robots need special software, distributed systems, and ROS
+- **Perception and Sensing:** [Sensors Overview](chapter4_sensors_overview.md), [Working with LIDAR](chapter5_lidar.md), [Computer Vision](chapter6_computer_vision.md)
 - **Hands-On Labs and Projects:** Step-by-step exercises and real-world challenges
 - **Appendices:** Reference materials, glossary, and further resources
 
@@ -39,12 +41,20 @@ This book emphasizes learning by doing. You will:
 No prior experience with robotics or ROS is required, but familiarity with basic programming and mathematics will be helpful. The goal is to make robotics accessible, engaging, and relevant.
 
 ## Further Reading and Resources
-- [Robotis Turtlebot3 Manual](http://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
-- [ROS Wiki](http://wiki.ros.org/)
+- [Robotis Turtlebot3 Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
+- [ROS 2 Documentation](https://docs.ros.org/en/rolling/)
 - [YDLIDAR X4](https://www.ydlidar.com/products/view/5.html)
-- [URDF documentation](http://wiki.ros.org/urdf/XML/joint)
+- [URDF documentation](https://docs.ros.org/en/rolling/Tutorials/Intermediate/URDF/URDF-Main.html)
 - [Boston is a global hub for robotics!](https://masstech.org/robotics)
+
+## About This Book
+
+This book grew out of classroom materials developed for the COSI 119 *Autonomous Robotics* course at Brandeis University. The source material — lecture slides, topic notes, lab assignments, and project descriptions — was assembled over several years of teaching. That material was then reviewed, reorganized, and expanded into a continuous narrative by a large language model (Claude Sonnet 4.6 / GitHub Copilot). The goal was to turn a collection of teaching artifacts into a coherent text suitable for self-study.
+
+Because the narrative was generated automatically from teaching notes, **errors are possible and even likely**. Technical claims have been checked where possible against the source material and against current documentation, but the book should not be treated as a definitive reference. If you spot a mistake — factual, technical, or editorial — please report it to [pitosalas@gmail.com](mailto:pitosalas@gmail.com) so it can be corrected.
 
 ---
 
 *This introduction is based solely on classroom source materials and is designed to set the stage for your journey into robotics.*
+
+> **Disclaimer:** This content was generated from classroom source materials by an AI assistant. Errors may be present — please report any to [pitosalas@gmail.com](mailto:pitosalas@gmail.com).

@@ -2,6 +2,10 @@
 title: Sensors Overview
 author: GPT-5.3-Codex (Copilot)
 date: 2026-04-26
+prev_url: /copilot/chapter3_software_arch/
+prev_title: "Chapter 3: Robot Software Architecture"
+next_url: /copilot/chapter5_lidar/
+next_title: "Chapter 5: Working with LIDAR"
 ---
 
 # Chapter 4: Sensors Overview
@@ -90,10 +94,13 @@ The practical takeaway is that robot perception is a systems problem, not a sing
 3. Uses cameras or depth sensors for richer scene understanding and task-specific perception.
 4. Uses GPS when operating outdoors and global coordinates matter.
 
-This layered approach is the foundation for later chapters on LIDAR processing, computer vision, and full autonomy stacks.
+This layered approach is the foundation for [Chapter 5: Working with LIDAR](chapter5_lidar.md), [Chapter 6: Computer Vision](chapter6_computer_vision.md), and the full autonomy stacks covered later in the book.
 
 ## 4.9 Further Reading
 - [LaserScan (ROS 2 sensor_msgs)](https://docs.ros2.org/latest/api/sensor_msgs/msg/LaserScan.html)
+- [Odometry (ROS 2 nav_msgs)](https://docs.ros2.org/latest/api/nav_msgs/msg/Odometry.html)
+- [Imu (ROS 2 sensor_msgs)](https://docs.ros2.org/latest/api/sensor_msgs/msg/Imu.html)
+- [Image (ROS 2 sensor_msgs)](https://docs.ros2.org/latest/api/sensor_msgs/msg/Image.html)
 - [YDLIDAR X4](https://www.ydlidar.com/products/view/5.html)
 - [OpenCV](https://opencv.org/)
 - [TurtleBot3 Overview](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
@@ -101,3 +108,5 @@ This layered approach is the foundation for later chapters on LIDAR processing, 
 ---
 
 *This chapter is based solely on classroom source materials and is designed for educational use.*
+
+> **Disclaimer:** This content was generated from classroom source materials by an AI assistant. Errors may be present — please report any to [pitosalas@gmail.com](mailto:pitosalas@gmail.com).

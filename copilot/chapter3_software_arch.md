@@ -2,6 +2,10 @@
 title: Robot Software Architecture
 author: GPT-4.1
 date: 2026-04-26
+prev_url: /copilot/chapter2_robot_hardware/
+prev_title: "Chapter 2: Robot Hardware"
+next_url: /copilot/chapter4_sensors_overview/
+next_title: "Chapter 4: Sensors Overview"
 ---
 
 
@@ -40,10 +44,10 @@ However, distributed systems also introduce complexity. Communication delays, sy
 
 The Robot Operating System (ROS) is the most widely used framework for robot software development. ROS was created to solve the unique challenges of robotics:
 
-- **Nodes:** Each functional component (e.g., sensor driver, controller, planner) runs as a separate process, called a node. This separation improves reliability and makes it easier to develop and debug complex systems.
-- **Topics:** Nodes communicate by publishing and subscribing to topics. For example, a LIDAR node publishes sensor data on a `/scan` topic, while a mapping node subscribes to that topic to build a map.
-- **Services:** For request/response interactions, nodes can offer services. For example, a node might provide a service to reset the robot's position or query its battery level.
-- **Actions:** Some tasks, like navigation, take time and require feedback. ROS actions support long-running goals with progress updates and the ability to cancel or preempt tasks.
+- **Nodes:** Each functional component (e.g., sensor driver, controller, planner) runs as a separate process, called a node. This separation improves reliability and makes it easier to develop and debug complex systems. See the [ROS 2 Nodes documentation](https://docs.ros.org/en/rolling/Concepts/Basic/About-Nodes.html).
+- **Topics:** Nodes communicate by publishing and subscribing to topics. For example, a LIDAR node publishes sensor data on a `/scan` topic (see [Chapter 5: Working with LIDAR](chapter5_lidar.md)), while a mapping node subscribes to that topic to build a map. See the [ROS 2 Topics documentation](https://docs.ros.org/en/rolling/Concepts/Basic/About-Topics.html).
+- **Services:** For request/response interactions, nodes can offer services. For example, a node might provide a service to reset the robot's position or query its battery level. See [ROS 2 Services documentation](https://docs.ros.org/en/rolling/Concepts/Basic/About-Services.html).
+- **Actions:** Some tasks, like navigation, take time and require feedback. ROS actions support long-running goals with progress updates and the ability to cancel or preempt tasks. See [ROS 2 Actions documentation](https://docs.ros.org/en/rolling/Concepts/Basic/About-Actions.html).
 
 ROS abstracts away hardware details, allowing developers to focus on high-level logic. It also provides powerful tools for simulation (Gazebo), visualization (RViz), and debugging. The modularity of ROS means that code can be reused across different robots and projects, accelerating development and fostering collaboration.
 
@@ -53,7 +57,7 @@ To make these concepts concrete, let's look at two example architectures:
 
 ### Simple Robot Software Stack
 
-Imagine a basic mobile robot equipped with a LIDAR and a camera. Its software might be organized as follows:
+Imagine a basic mobile robot equipped with a [LIDAR](chapter5_lidar.md) and a [camera](chapter6_computer_vision.md). Its software might be organized as follows:
 
 - **Sensor nodes** publish data from the LIDAR and camera
 - **Control nodes** subscribe to sensor data and send commands to the motors
@@ -89,9 +93,16 @@ This architecture allows the TurtleBot3 to perform complex tasks like simultaneo
 
 To deepen your understanding of robot software architecture and ROS, explore these resources:
 
-- [ROS Wiki](http://wiki.ros.org/)
-- [TurtleBot3 Software Architecture](http://emanual.robotis.com/docs/en/platform/turtlebot3/software/)
+- [ROS 2 Documentation](https://docs.ros.org/en/rolling/)
+- [TurtleBot3 Software Architecture](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
+
+### Relevant Papers
+- Martin, ["Real Robots Don't Drive Straight" (2007)](https://www.aaai.org/Papers/Symposia/Spring/2007/SS-07-09/SS07-09-020.pdf) — a frank look at the gap between idealized robot models and real physical behavior; essential reading before writing any motion control code.
+- Arkin, ["Motor Schema-Based Mobile Robot Navigation"](https://www.semanticscholar.org/paper/Motor-Schema-Based-Mobile-Robot-Navigation-Arkin/fc86aea4a0dedaa7525aeb68464722445eceab50) — influential work on behaviour-based architectures for navigation.
+- Brooks, ["A Robust Layered Control System for a Mobile Robot"](https://www.semanticscholar.org/paper/A-robust-layered-control-system-for-a-mobile-robot-Brooks/dc66c15a005dd1a3a9f033769e7fbc3b943be188) — the subsumption architecture paper that inspired distributed, reactive robot software design.
 
 ---
 
 *This chapter is based solely on classroom source materials and is designed for educational use.*
+
+> **Disclaimer:** This content was generated from classroom source materials by an AI assistant. Errors may be present — please report any to [pitosalas@gmail.com](mailto:pitosalas@gmail.com).

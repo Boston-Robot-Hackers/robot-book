@@ -2,6 +2,8 @@
 title: Computer Vision
 author: GPT-4.1
 date: 2026-04-26
+prev_url: /copilot/chapter5_lidar/
+prev_title: "Chapter 5: Working with LIDAR"
 ---
 
 
@@ -70,7 +72,7 @@ cv2.destroyAllWindows()
 
 **Hands-On:**
 - Try using OpenCV to filter an image, detect edges, or find contours.
-- Use ROS topics to publish and subscribe to camera images.
+- Use ROS 2 topics to publish and subscribe to camera images. See the [ROS 2 image_transport documentation](https://docs.ros.org/en/rolling/p/image_transport/).
 
 ## Line Detection
 
@@ -97,7 +99,7 @@ Fiducials are special patterns (such as AprilTags or QR codes) placed in the env
 - Teaching robots to recognize specific places or items
 
 **Fiducial SLAM:**
-Instead of using LIDAR or video alone, Fiducial SLAM uses the positions of fiducials to define a coordinate space. The robot can locate itself and other objects relative to these markers, even if it cannot build a traditional map of walls.
+Instead of using [LIDAR](chapter5_lidar.md) or video alone, Fiducial SLAM uses the positions of fiducials to define a coordinate space. The robot can locate itself and other objects relative to these markers, even if it cannot build a traditional map of walls.
 
 **Project:**
 - "Demonstrate understanding of Fiducials by implementing fiducial SLAM."
@@ -123,7 +125,7 @@ Robots can use computer vision to recognize faces and gestures, enabling more na
 
 ## Depth Perception and 3D Vision
 
-Depth cameras and stereo vision allow robots to perceive the world in three dimensions. This is essential for tasks like obstacle avoidance, object manipulation, and navigation in complex environments.
+Depth cameras and stereo vision allow robots to perceive the world in three dimensions. This is essential for tasks like obstacle avoidance, object manipulation, and navigation in complex environments. For a broader overview of depth sensing and how it compares to other sensors, see [Chapter 4: Sensors Overview](chapter4_sensors_overview.md#44-depth-sensors).
 
 **Project:**
 - "Interface the depth camera to Alien and use it for something."
@@ -149,9 +151,17 @@ Explore these project ideas to deepen your understanding of computer vision in r
 
 - [OpenCV](https://opencv.org/)
 - [AprilTag](https://april.eecs.umich.edu/software/apriltag.html)
-- [ROS Vision Tutorials](http://wiki.ros.org/vision_opencv)
+- [ROS 2 Vision Tutorials](https://github.com/ros-perception/vision_opencv)
 - [RealSense First Impressions](https://msadowski.github.io/Realsense-T265-First-Impressions/)
+
+### Relevant Papers
+- Olson, ["AprilTag: A robust and flexible visual fiducial system" (2011)](https://april.eecs.umich.edu/pdfs/olson2011tags.pdf) — the original AprilTag paper; directly relevant to fiducial-based localization exercises.
+- Ross, ["Fiducial Marker Navigation for Mobile Robots"](http://www.cs.ru.ac.za/research/g09r5654/downloads/shortpaper.pdf) — practical treatment of using fiducial markers for robot navigation.
+- Endres et al., ["An Evaluation of the RGB-D SLAM System"](http://www2.informatik.uni-freiburg.de/~endres/files/publications/endres12icra.pdf) — evaluation of visual + depth SLAM, relevant to depth camera work.
+- Murphy, ["Human-Robot Interaction in Rescue Robotics" (2004)](https://www.aaai.org/Papers/Symposia/Spring/2007/SS-07-09/SS07-09-020.pdf) — real-world context for why vision and sensing robustness matters so much.
 
 ---
 
 *This chapter is based solely on classroom source materials and is designed for educational use.*
+
+> **Disclaimer:** This content was generated from classroom source materials by an AI assistant. Errors may be present — please report any to [pitosalas@gmail.com](mailto:pitosalas@gmail.com).

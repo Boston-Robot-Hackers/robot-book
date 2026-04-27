@@ -2,6 +2,10 @@
 title: Working with LIDAR
 author: GPT-4.1
 date: 2026-04-26
+prev_url: /copilot/chapter4_sensors_overview/
+prev_title: "Chapter 4: Sensors Overview"
+next_url: /copilot/chapter6_computer_vision/
+next_title: "Chapter 6: Computer Vision"
 ---
 
 
@@ -10,27 +14,37 @@ date: 2026-04-26
 ## 5.1 Introduction to LIDAR
 LIDAR (Light Detection and Ranging) is one of the most important sensors in modern mobile robotics. It works by emitting laser pulses and measuring the time it takes for the light to reflect off objects and return. By rotating the laser, a LIDAR sensor can quickly scan its surroundings and build a 2D or 3D map of distances to obstacles.
 
-LIDAR is used for mapping, localization, and obstacle avoidance. For example, the YDLIDAR X4 (used in our robots) provides a 2D scan of the environment, which is essential for navigation and safety.
+LIDAR is used for mapping, localization, and obstacle avoidance. For example, the YDLIDAR X4 (used in our robots) provides a 2D scan of the environment, which is essential for navigation and safety. For a broader look at where LIDAR fits among all robot sensors, see [Chapter 4: Sensors Overview](chapter4_sensors_overview.md#42-lidar).
 
 ## 5.2 LIDAR Data Structure
-LIDAR data is typically published in ROS on the `/scan` topic as `LaserScan` messages. The most important field is `ranges`, which is an array of distance measurements. Each entry in this array corresponds to a specific angle, so together they form a "slice" of the robot's surroundings.
+LIDAR data is published in ROS 2 on the `/scan` topic as `sensor_msgs/msg/LaserScan` messages. The most important field is `ranges`, which is an array of distance measurements. Each entry in this array corresponds to a specific angle, so together they form a "slice" of the robot's surroundings.
 
-Other fields in the message include the minimum and maximum angles, the increment between measurements, and the time at which the scan was taken. For more details, see the [LaserScan.msg documentation](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/LaserScan.html).
+Other fields in the message include the minimum and maximum angles, the increment between measurements, and the time at which the scan was taken. For more details, see the [LaserScan message documentation](https://docs.ros2.org/latest/api/sensor_msgs/msg/LaserScan.html).
 
-Here is a simple Python snippet to subscribe to LIDAR data in ROS:
+Here is a minimal ROS 2 Python node that subscribes to LIDAR data:
 
 ```python
-import rospy
+import rclpy
+from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
 
-def scan_callback(msg):
-	print("Received scan with {} ranges".format(len(msg.ranges)))
-	# Example: print the distance straight ahead
-	print("Distance ahead: {:.2f} meters".format(msg.ranges[len(msg.ranges)//2]))
+class LidarListener(Node):
+    def __init__(self):
+        super().__init__('lidar_listener')
+        self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
 
-rospy.init_node('lidar_listener')
-rospy.Subscriber('/scan', LaserScan, scan_callback)
-rospy.spin()
+    def scan_callback(self, msg):
+        self.get_logger().info(f'Received scan with {len(msg.ranges)} ranges')
+        mid = len(msg.ranges) // 2
+        self.get_logger().info(f'Distance ahead: {msg.ranges[mid]:.2f} m')
+
+def main():
+    rclpy.init()
+    rclpy.spin(LidarListener())
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
 ```
 
 ## 5.3 Filtering and Cleaning LIDAR Data
@@ -41,7 +55,7 @@ Common filtering steps include:
 - Replacing invalid values with a maximum distance or ignoring them
 - Smoothing the data with a moving average or median filter
 
-You can write a ROS node that subscribes to `/scan`, filters the data, and republishes it on a new topic (e.g., `/scan/clean`).
+You can write a ROS 2 node that subscribes to `/scan`, filters the data, and republishes it on a new topic (e.g., `/scan_filtered`). See the [ROS 2 Writing a Simple Publisher and Subscriber tutorial](https://docs.ros.org/en/rolling/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html) for the pattern.
 
 ## 5.4 Obstacle Detection
 One of the main uses of LIDAR is obstacle detection. By examining the `ranges` array, you can identify obstacles that are closer than a certain threshold. For example, if any value in `ranges` is less than 0.3 meters, the robot should stop or turn to avoid a collision.
@@ -49,21 +63,28 @@ One of the main uses of LIDAR is obstacle detection. By examining the `ranges` a
 You can also segment the scan to identify free and occupied regions, which is useful for mapping and path planning. More advanced algorithms can cluster points to detect individual objects or walls.
 
 ## 5.5 Visualization and Debugging
-Visualization tools are essential for understanding and debugging LIDAR data. In ROS, RViz is the standard tool for visualizing 2D and 3D sensor data. You can see the LIDAR scan as a set of points or lines in the robot's coordinate frame.
+Visualization tools are essential for understanding and debugging LIDAR data. In ROS 2, [RViz2](https://docs.ros.org/en/rolling/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html) is the standard tool for visualizing 2D and 3D sensor data. You can see the LIDAR scan as a set of points or lines in the robot's coordinate frame.
 
 To analyze LIDAR data offline, you can save it to a CSV file using the following command:
 
 ```bash
-rostopic echo /scan -w 4 -p -n 50 > ~/scan_data
+ros2 topic echo --csv /scan | head -n 50 > ~/scan_data.csv
 ```
 
-This will record 50 messages from the `/scan` topic for later analysis in a spreadsheet or plotting tool.
+This records 50 messages from the `/scan` topic for later analysis in a spreadsheet or plotting tool.
 
 ## 5.6 Further Reading
 - [YDLIDAR X4](https://www.ydlidar.com/products/view/5.html)
 - [Reading Laserscan Data](http://www.theconstructsim.com/read-laserscan-data/)
-- [RViz](http://wiki.ros.org/rviz)
+- [RViz2](https://github.com/ros2/rviz)
+
+### Relevant Papers
+- Riisgaard & Blas, ["SLAM for Dummies: A Tutorial Approach to Simultaneous Localization and Mapping" (2004)](https://dspace.mit.edu/bitstream/handle/1721.1/36832/16-412JSpring2004/NR/rdonlyres/Aeronautics-and-Astronautics/16-412JSpring2004/A3C5517F-C092-4554-AA43-232DC74609B3/0/1Aslam_blas_report.pdf) — the most accessible introduction to how LIDAR scans are used to build maps and localize simultaneously.
+- ["Wall Following for Autonomous Navigation"](https://sunfest.seas.upenn.edu/wp-content/uploads/2018/07/12-bayer.pdf) — a concrete example of LIDAR-based reactive navigation, directly relevant to obstacle-avoidance exercises.
+- Fox et al., ["The Dynamic Window Approach to Collision Avoidance"](http://www.cs.washington.edu/node/4749) — the classic paper for converting LIDAR obstacle data into safe velocity commands.
 
 ---
 
 *This chapter is based solely on classroom source materials and is designed for educational use.*
+
+> **Disclaimer:** This content was generated from classroom source materials by an AI assistant. Errors may be present — please report any to [pitosalas@gmail.com](mailto:pitosalas@gmail.com).
